@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zitha's Towing Services — 24/7 Towing &amp; Recovery in Phalaborwa</title>
+  <title>Zitha's Towing Services — Phalaborwa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ----- reset & base ----- */
     *,
@@ -18,14 +18,12 @@
     }
 
     :root {
-      --bg: #e8e6e1;
-      --ink: #1c1c1c;
-      --accent: #ff5a00;
-      --paper: #f2f0eb;
-      --rule: #c5c2bb;
-      --radius: 2px;
-      --font-display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-      --font-body: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+      --white: #ffffff;
+      --black: #000000;
+      --accent: #ffe500;
+      --grey: #e0e0e0;
+      --font-mono: 'Space Mono', 'Courier New', monospace;
+      --font-sans: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
       --space-1: 4px;
       --space-2: 8px;
       --space-3: 16px;
@@ -34,6 +32,8 @@
       --space-6: 48px;
       --space-7: 64px;
       --space-8: 96px;
+      --border: 3px solid var(--black);
+      --shadow: 6px 6px 0 var(--black);
     }
 
     html {
@@ -41,9 +41,9 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-sans);
       font-size: 17px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -53,10 +53,10 @@
     h2,
     h3,
     h4 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      line-height: 1.05;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
     }
 
     a {
@@ -66,12 +66,12 @@
 
     ::selection {
       background: var(--accent);
-      color: #fff;
+      color: var(--black);
     }
 
     :focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
+      outline: 4px solid var(--black);
+      outline-offset: 2px;
     }
 
     .wrap {
@@ -81,14 +81,15 @@
 
     .tag {
       display: inline-block;
-      font-family: var(--font-display);
+      font-family: var(--font-mono);
       font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 2px;
+      background: var(--accent);
+      color: var(--black);
+      padding: 4px 10px;
+      border: var(--border);
       margin-bottom: var(--space-3);
     }
 
@@ -97,58 +98,55 @@
       align-items: center;
       justify-content: center;
       gap: var(--space-2);
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 15px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 14px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      background: var(--ink);
-      color: var(--bg);
-      border: 2px solid var(--ink);
-      border-radius: var(--radius);
+      background: var(--black);
+      color: var(--white);
+      border: var(--border);
       padding: 12px 22px;
       min-height: 44px;
       cursor: pointer;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      box-shadow: var(--shadow);
+      transition: transform 0.1s, box-shadow 0.1s;
     }
 
     .btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 var(--black);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--black);
     }
 
     .btn-accent {
       background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .btn-accent:hover {
-      background: transparent;
-      color: var(--accent);
+      color: var(--black);
     }
 
     .btn-outline {
-      background: transparent;
-      color: var(--ink);
-      border: 2px solid var(--ink);
+      background: var(--white);
+      color: var(--black);
+      box-shadow: none;
     }
 
     .btn-outline:hover {
-      background: var(--ink);
-      color: var(--bg);
+      background: var(--accent);
+      box-shadow: var(--shadow);
     }
 
     /* ----- header ----- */
     .site-header {
-      background: var(--ink);
-      color: var(--bg);
+      background: var(--white);
+      border-bottom: var(--border);
       padding: var(--space-3) 0;
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 3px solid var(--accent);
     }
 
     .header-inner {
@@ -160,25 +158,27 @@
     }
 
     .logo {
-      font-family: var(--font-display);
-      font-size: 24px;
+      font-family: var(--font-mono);
+      font-size: 22px;
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: -0.02em;
       line-height: 1;
       display: flex;
       align-items: baseline;
-      gap: 8px;
+      gap: 6px;
     }
 
     .logo span {
-      color: var(--accent);
+      background: var(--accent);
+      padding: 0 6px;
+      border: 2px solid var(--black);
     }
 
     .logo small {
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       opacity: 0.7;
     }
@@ -192,42 +192,40 @@
     }
 
     .nav-list a {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      opacity: 0.85;
       padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      transition: opacity 0.15s, border-color 0.15s;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.15s;
     }
 
     .nav-list a:hover {
-      opacity: 1;
       border-bottom-color: var(--accent);
     }
 
     .header-cta {
-      font-family: var(--font-display);
+      font-family: var(--font-mono);
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       background: var(--accent);
-      color: #fff;
-      border: 2px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 10px 18px;
+      color: var(--black);
+      border: var(--border);
+      padding: 10px 16px;
       min-height: 44px;
       display: inline-flex;
       align-items: center;
-      transition: background 0.15s, color 0.15s;
+      box-shadow: 4px 4px 0 var(--black);
+      transition: transform 0.1s, box-shadow 0.1s;
     }
 
     .header-cta:hover {
-      background: transparent;
-      color: var(--accent);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--black);
     }
 
     /* ----- hero ----- */
@@ -235,10 +233,9 @@
       padding: var(--space-8) 0 var(--space-7);
       position: relative;
       overflow: hidden;
-      background: var(--bg);
+      background: var(--white);
     }
 
-    /* road-marking pattern: dashed diagonal lines */
     .hero::before {
       content: '';
       position: absolute;
@@ -247,11 +244,11 @@
       width: 100%;
       height: 100%;
       background-image: repeating-linear-gradient(
-        -55deg,
+        45deg,
         transparent,
-        transparent 28px,
-        rgba(28, 28, 28, 0.07) 28px,
-        rgba(28, 28, 28, 0.07) 30px
+        transparent 40px,
+        rgba(0, 0, 0, 0.03) 40px,
+        rgba(0, 0, 0, 0.03) 42px
       );
       pointer-events: none;
     }
@@ -266,9 +263,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(56px, 10vw, 118px);
+      font-size: clamp(56px, 10vw, 120px);
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       line-height: 0.9;
       max-width: 12ch;
       text-transform: uppercase;
@@ -276,7 +273,11 @@
 
     .hero h1 em {
       font-style: normal;
-      color: var(--accent);
+      background: var(--accent);
+      padding: 0 8px;
+      border: var(--border);
+      display: inline-block;
+      transform: rotate(-1deg);
     }
 
     .hero-sub {
@@ -284,23 +285,25 @@
       line-height: 1.65;
       max-width: 52ch;
       margin-top: var(--space-4);
-      color: #3a3a3a;
+      color: #2a2a2a;
     }
 
     .hero-side {
-      background: var(--ink);
-      color: var(--bg);
+      background: var(--white);
+      border: var(--border);
+      box-shadow: var(--shadow);
       padding: var(--space-4);
-      border-radius: var(--radius);
-      border-top: 4px solid var(--accent);
     }
 
     .hero-side h2 {
-      font-size: 18px;
+      font-size: 16px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      background: var(--black);
       color: var(--accent);
+      padding: 6px 10px;
       margin-bottom: var(--space-3);
+      display: inline-block;
     }
 
     .dispatch-list {
@@ -311,7 +314,7 @@
 
     .dispatch-list li {
       display: grid;
-      grid-template-columns: 70px 1fr;
+      grid-template-columns: 80px 1fr;
       gap: var(--space-2);
       align-items: baseline;
       font-size: 15px;
@@ -319,27 +322,27 @@
     }
 
     .dispatch-list .label {
-      font-family: var(--font-display);
+      font-family: var(--font-mono);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #a8a39b;
+      color: #555;
     }
 
     .dispatch-list .value {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
 
     .dispatch-list .value a {
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
     }
 
     .dispatch-list .value a:hover {
-      color: var(--accent);
+      background: var(--accent);
     }
 
     .hero-actions {
@@ -351,24 +354,24 @@
 
     /* ----- band ----- */
     .band {
-      background: var(--ink);
-      color: var(--bg);
+      background: var(--black);
+      color: var(--white);
       padding: var(--space-3) 0;
       overflow: hidden;
-      border-top: 3px solid var(--accent);
-      border-bottom: 3px solid var(--accent);
+      border-top: var(--border);
+      border-bottom: var(--border);
     }
 
     .band-inner {
       display: flex;
       gap: var(--space-6);
       white-space: nowrap;
-      font-family: var(--font-display);
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      animation: slide 26s linear infinite;
+      animation: slide 30s linear infinite;
     }
 
     .band-inner span {
@@ -378,9 +381,8 @@
     }
 
     .band-inner span::before {
-      content: '//';
+      content: '///';
       color: var(--accent);
-      font-weight: 700;
     }
 
     @keyframes slide {
@@ -407,84 +409,83 @@
     }
 
     .section-head h2 {
-      font-size: clamp(34px, 5vw, 54px);
+      font-size: clamp(32px, 5vw, 52px);
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.01em;
+      letter-spacing: -0.02em;
       max-width: 16ch;
     }
 
     .section-head p {
       max-width: 42ch;
       font-size: 16px;
-      color: #4a4a4a;
+      color: #333;
       margin-top: var(--space-2);
     }
 
     /* ----- services ----- */
     .services {
-      background: var(--paper);
+      background: var(--white);
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--rule);
+      gap: var(--space-4);
     }
 
-    .service-item {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 0;
-      border-bottom: 1px solid var(--rule);
+    .service-card {
+      border: var(--border);
+      padding: var(--space-4);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform 0.1s, box-shadow 0.1s;
     }
 
-    .service-item:nth-child(odd) {
-      border-right: 1px solid var(--rule);
+    .service-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 var(--black);
     }
 
     .service-num {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      padding: var(--space-4) var(--space-2) var(--space-4) 0;
-      text-align: right;
-      border-right: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--accent);
+      border: 2px solid var(--black);
+      display: inline-block;
+      padding: 2px 8px;
+      margin-bottom: var(--space-3);
     }
 
-    .service-body {
-      padding: var(--space-4);
-    }
-
-    .service-body h3 {
-      font-size: 24px;
+    .service-card h3 {
+      font-size: 22px;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: -0.01em;
       margin-bottom: var(--space-2);
       line-height: 1.1;
     }
 
-    .service-body p {
+    .service-card p {
       font-size: 16px;
       line-height: 1.55;
-      color: #3a3a3a;
+      color: #2a2a2a;
     }
 
-    /* ----- proof / stats ----- */
+    /* ----- proof ----- */
     .proof {
-      background: var(--ink);
-      color: var(--bg);
+      background: var(--black);
+      color: var(--white);
+      border-top: var(--border);
+      border-bottom: var(--border);
     }
 
     .proof .section-head h2 {
-      color: var(--bg);
+      color: var(--white);
     }
 
     .proof .section-head p {
-      color: #b0aca5;
+      color: #aaa;
     }
 
     .stats-grid {
@@ -495,49 +496,50 @@
     }
 
     .stat {
-      border-top: 3px solid var(--accent);
-      padding-top: var(--space-3);
+      border: 2px solid var(--white);
+      padding: var(--space-3);
+      background: transparent;
     }
 
     .stat strong {
       display: block;
-      font-family: var(--font-display);
-      font-size: clamp(42px, 6vw, 68px);
+      font-family: var(--font-mono);
+      font-size: clamp(40px, 6vw, 64px);
       font-weight: 700;
       line-height: 1;
       color: var(--accent);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
     }
 
     .stat span {
       display: block;
-      font-family: var(--font-display);
-      font-size: 13px;
-      letter-spacing: 0.1em;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-top: var(--space-2);
-      color: #b0aca5;
+      color: #aaa;
       line-height: 1.4;
     }
 
     .quote-block {
       margin-top: var(--space-6);
       max-width: 64ch;
-      border-left: 4px solid var(--accent);
+      border-left: 6px solid var(--accent);
       padding-left: var(--space-4);
     }
 
     .quote-block blockquote {
-      font-family: var(--font-display);
-      font-size: clamp(22px, 3vw, 30px);
-      font-weight: 500;
-      line-height: 1.3;
-      letter-spacing: 0.01em;
+      font-family: var(--font-mono);
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
     }
 
     .quote-block cite {
       display: block;
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       font-style: normal;
       font-size: 14px;
       letter-spacing: 0.06em;
@@ -548,7 +550,7 @@
 
     /* ----- about / process ----- */
     .about {
-      background: var(--bg);
+      background: var(--white);
     }
 
     .about-grid {
@@ -559,10 +561,11 @@
     }
 
     .about-text h2 {
-      font-size: clamp(34px, 5vw, 54px);
+      font-size: clamp(32px, 5vw, 52px);
       text-transform: uppercase;
       font-weight: 700;
       margin-bottom: var(--space-4);
+      letter-spacing: -0.02em;
     }
 
     .about-text p {
@@ -581,39 +584,44 @@
     .process-list li {
       counter-increment: step;
       display: grid;
-      grid-template-columns: 36px 1fr;
+      grid-template-columns: 44px 1fr;
       gap: var(--space-3);
       padding-bottom: var(--space-4);
-      border-bottom: 1px solid var(--rule);
+      border-bottom: 2px solid var(--black);
     }
 
     .process-list li::before {
       content: counter(step, decimal-leading-zero);
-      font-family: var(--font-display);
-      font-size: 20px;
+      font-family: var(--font-mono);
+      font-size: 18px;
       font-weight: 700;
-      color: var(--accent);
-      line-height: 1.2;
+      background: var(--accent);
+      border: 2px solid var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
     }
 
     .process-list h3 {
-      font-size: 21px;
+      font-size: 20px;
       text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      font-weight: 700;
+      letter-spacing: -0.01em;
       margin-bottom: 4px;
     }
 
     .process-list p {
       font-size: 15px;
       line-height: 1.55;
-      color: #3a3a3a;
+      color: #2a2a2a;
     }
 
     /* ----- contact ----- */
     .contact {
-      background: var(--paper);
-      border-top: 4px solid var(--ink);
+      background: var(--white);
+      border-top: var(--border);
     }
 
     .contact-grid {
@@ -624,10 +632,11 @@
     }
 
     .contact-info h2 {
-      font-size: clamp(34px, 5vw, 54px);
+      font-size: clamp(32px, 5vw, 52px);
       text-transform: uppercase;
       font-weight: 700;
       margin-bottom: var(--space-4);
+      letter-spacing: -0.02em;
     }
 
     .contact-details {
@@ -637,13 +646,16 @@
     }
 
     .contact-details dt {
-      font-family: var(--font-display);
-      font-size: 12px;
-      font-weight: 600;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      background: var(--black);
       color: var(--accent);
-      margin-bottom: 2px;
+      display: inline-block;
+      padding: 2px 8px;
+      margin-bottom: 4px;
     }
 
     .contact-details dd {
@@ -652,38 +664,40 @@
     }
 
     .contact-details dd a {
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
       padding-bottom: 1px;
     }
 
     .contact-details dd a:hover {
-      color: var(--accent);
+      background: var(--accent);
     }
 
     .contact-form {
       display: grid;
       gap: var(--space-3);
+      border: var(--border);
+      padding: var(--space-4);
+      box-shadow: var(--shadow);
     }
 
     .contact-form label {
-      font-family: var(--font-display);
+      font-family: var(--font-mono);
       font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--ink);
+      color: var(--black);
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       font-size: 16px;
       padding: 12px 14px;
-      background: #fff;
-      border: 2px solid var(--ink);
-      border-radius: var(--radius);
-      color: var(--ink);
+      background: var(--white);
+      border: 3px solid var(--black);
+      color: var(--black);
       min-height: 44px;
     }
 
@@ -694,8 +708,8 @@
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      outline: 3px solid var(--accent);
-      outline-offset: 1px;
+      outline: 4px solid var(--accent);
+      outline-offset: 2px;
     }
 
     .contact-form .btn {
@@ -705,8 +719,8 @@
 
     /* ----- footer ----- */
     .site-footer {
-      background: var(--ink);
-      color: #c5c0b8;
+      background: var(--black);
+      color: #aaa;
       padding: var(--space-6) 0 var(--space-4);
     }
 
@@ -725,13 +739,13 @@
     }
 
     .footer-brand .logo {
-      font-size: 22px;
-      color: var(--bg);
+      font-size: 20px;
+      color: var(--white);
     }
 
     .footer-col h4 {
-      font-family: var(--font-display);
-      font-size: 13px;
+      font-family: var(--font-mono);
+      font-size: 12px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
@@ -753,18 +767,18 @@
 
     .footer-col a:hover {
       border-bottom-color: var(--accent);
-      color: var(--bg);
+      color: var(--white);
     }
 
     .footer-bottom {
-      border-top: 1px solid #3a3a3a;
+      border-top: 1px solid #333;
       padding-top: var(--space-4);
       display: flex;
       justify-content: space-between;
       gap: var(--space-4);
       flex-wrap: wrap;
       font-size: 13px;
-      color: #8a857d;
+      color: #666;
     }
 
     /* ----- responsive ----- */
@@ -780,10 +794,6 @@
 
       .service-grid {
         grid-template-columns: 1fr;
-      }
-
-      .service-item:nth-child(odd) {
-        border-right: 0;
       }
 
       .stats-grid {
@@ -825,16 +835,12 @@
         padding: var(--space-6) 0 var(--space-5);
       }
 
-      .service-item {
-        grid-template-columns: 34px 1fr;
-      }
-
       .section {
         padding: var(--space-6) 0;
       }
 
       .section-head h2 {
-        font-size: 32px;
+        font-size: 30px;
       }
 
       .stats-grid {
@@ -853,17 +859,17 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="#" class="logo" aria-label="Zitha's Towing Services home">
-        ZITHA'S TOWING<span>.</span> <small>Phalaborwa / 24HR</small>
+        ZITHA'S<span>TOWING</span> <small>Phalaborwa</small>
       </a>
       <nav aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="#recovery">Recovery services</a></li>
-          <li><a href="#record">Call record</a></li>
-          <li><a href="#approach">Dispatch process</a></li>
-          <li><a href="#contact">Contact dispatch</a></li>
+          <li><a href="#recovery">Recovery</a></li>
+          <li><a href="#record">Record</a></li>
+          <li><a href="#dispatch">Dispatch</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="tel:+27720819170" class="header-cta">Call 072 081 9170</a>
+      <a href="tel:+27720819170" class="header-cta">072 081 9170</a>
     </div>
   </header>
 
@@ -873,43 +879,43 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="wrap hero-content">
         <div>
-          <span class="tag">Ba-Phalaborwa · Limpopo · Open 24 hours</span>
+          <span class="tag">Phalaborwa · 24 Hours · NATA Listed</span>
           <h1 id="hero-heading">
-            BREAKDOWN? <em>WE’RE</em> ALREADY MOVING.
+            BREAKDOWN? <em>WE'RE ON IT.</em>
           </h1>
           <p class="hero-sub">
-            Zitha's Towing Services runs recovery and roadside assistance across Phalaborwa and the
-            surrounding Ba-Phalaborwa area. Mechanical breakdowns, accident recovery, long-distance
-            towing, and safe vehicle storage — dispatched from Bataleur Street, day or night.
+            Zitha's Towing Services operates recovery, roadside assistance, and secure vehicle
+            storage from 167 Bataleur Street, Phalaborwa. One call to the dispatch line and a
+            unit is on the way — day, night, or public holiday.
           </p>
           <div class="hero-actions">
-            <a href="tel:+27720819170" class="btn-accent btn">Call dispatch now</a>
-            <a href="https://wa.me/27720819170" target="_blank" rel="noopener" class="btn-outline btn">WhatsApp for a tow</a>
+            <a href="tel:+27720819170" class="btn btn-accent">Call dispatch</a>
+            <a href="https://wa.me/27720819170" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp a tow</a>
           </div>
         </div>
 
         <aside class="hero-side" aria-label="Dispatch details">
-          <h2>Dispatch line</h2>
+          <h2>Dispatch / Live</h2>
           <ul class="dispatch-list">
             <li>
               <span class="label">Phone</span>
               <span class="value"><a href="tel:+27720819170">072 081 9170</a></span>
             </li>
             <li>
-              <span class="label">WhatsApp</span>
-              <span class="value"><a href="https://wa.me/27720819170" target="_blank" rel="noopener">Message dispatch</a></span>
-            </li>
-            <li>
               <span class="label">Hours</span>
               <span class="value">24 / 7 / 365</span>
             </li>
             <li>
-              <span class="label">Base</span>
-              <span class="value" style="font-size:16px;">167 Bataleur St<br>Phalaborwa, 1390</span>
+              <span class="label">Yard</span>
+              <span class="value" style="font-size:15px;">167 Bataleur St<br>Phalaborwa, 1390</span>
             </li>
             <li>
               <span class="label">Status</span>
-              <span class="value" style="font-size:16px; color:#ff5a00;">Units available</span>
+              <span class="value" style="font-size:15px; color:var(--accent);">Units ready</span>
+            </li>
+            <li>
+              <span class="label">Listed</span>
+              <span class="value" style="font-size:15px;">NATA operator</span>
             </li>
           </ul>
         </aside>
@@ -921,16 +927,14 @@
       <div class="band-inner">
         <span>24-hour towing</span>
         <span>Accident recovery</span>
-        <span>Mechanical breakdowns</span>
-        <span>Long-distance transport</span>
         <span>Roadside assistance</span>
-        <span>Safe vehicle storage</span>
+        <span>Long-distance transport</span>
+        <span>Secure storage</span>
         <span>24-hour towing</span>
         <span>Accident recovery</span>
-        <span>Mechanical breakdowns</span>
-        <span>Long-distance transport</span>
         <span>Roadside assistance</span>
-        <span>Safe vehicle storage</span>
+        <span>Long-distance transport</span>
+        <span>Secure storage</span>
       </div>
     </div>
 
@@ -943,121 +947,109 @@
             <h2 id="recovery-heading">What we hook up and haul out.</h2>
           </div>
           <p>
-            From a sedan that will not start on the R71 to a truck that has gone off the shoulder
-            outside town. If it needs to be moved, loaded, or stored, call the dispatch line.
+            Light, medium, and heavy-duty. If it needs to be moved, loaded, or stored in the
+            Ba-Phalaborwa area, the dispatch line is the number to call.
           </p>
         </div>
 
         <div class="service-grid">
-          <div class="service-item">
-            <div class="service-num">01</div>
-            <div class="service-body">
-              <h3>24-hour breakdown towing</h3>
-              <p>
-                Mechanical failures, dead batteries, or vehicles that will not start. We tow light,
-                medium, and heavy-duty vehicles in the Ba-Phalaborwa area and along the R71 corridor.
-              </p>
-            </div>
+          <div class="service-card">
+            <span class="service-num">01</span>
+            <h3>24-hour breakdown towing</h3>
+            <p>
+              Mechanical failures, dead batteries, or vehicles that will not start. We tow
+              sedans, bakkies, and light commercial vehicles across Phalaborwa and along the
+              R71 corridor.
+            </p>
           </div>
 
-          <div class="service-item">
-            <div class="service-num">02</div>
-            <div class="service-body">
-              <h3>Accident &amp; recovery</h3>
-              <p>
-                Accident-damaged cars, bakkies, and trucks. We coordinate with insurance-approved
-                panels and transport the vehicle to a panel beater or our secure storage facility.
-              </p>
-            </div>
+          <div class="service-card">
+            <span class="service-num">02</span>
+            <h3>Accident &amp; recovery</h3>
+            <p>
+              Accident-damaged cars, bakkies, and trucks. We coordinate with insurance-approved
+              panels and transport the vehicle to a panel beater or our secure storage yard on
+              Bataleur Street.
+            </p>
           </div>
 
-          <div class="service-item">
-            <div class="service-num">03</div>
-            <div class="service-body">
-              <h3>Long-distance towing</h3>
-              <p>
-                Vehicle transport between Phalaborwa and Polokwane, Tzaneen, Hoedspruit, and
-                surrounding Limpopo towns. Priced on distance and vehicle type, quoted before
-                dispatch.
-              </p>
-            </div>
+          <div class="service-card">
+            <span class="service-num">03</span>
+            <h3>Long-distance towing</h3>
+            <p>
+              Vehicle transport between Phalaborwa and Polokwane, Tzaneen, Hoedspruit, and
+              surrounding Limpopo towns. Priced on distance and vehicle type, quoted before
+              dispatch.
+            </p>
           </div>
 
-          <div class="service-item">
-            <div class="service-num">04</div>
-            <div class="service-body">
-              <h3>Roadside assistance</h3>
-              <p>
-                Jump starts, flat-tyre changes, fuel drops, and vehicle unlocks where accessible.
-                If the vehicle cannot be started on the spot, we load and tow.
-              </p>
-            </div>
+          <div class="service-card">
+            <span class="service-num">04</span>
+            <h3>Roadside assistance</h3>
+            <p>
+              Jump starts, flat-tyre changes, fuel drops, and vehicle unlocks where accessible.
+              If the vehicle cannot be started on the spot, we load and tow.
+            </p>
           </div>
 
-          <div class="service-item">
-            <div class="service-num">05</div>
-            <div class="service-body">
-              <h3>Safe vehicle storage</h3>
-              <p>
-                Insurance-approved secure storage for accident-damaged or recovered vehicles.
-                Vehicles are logged in, stored behind fencing, and released only on authorised
-                instruction.
-              </p>
-            </div>
+          <div class="service-card">
+            <span class="service-num">05</span>
+            <h3>Secure vehicle storage</h3>
+            <p>
+              Insurance-approved storage for accident-damaged or recovered vehicles. Vehicles
+              are logged in, stored behind fencing, and released only on authorised instruction.
+            </p>
           </div>
 
-          <div class="service-item">
-            <div class="service-num">06</div>
-            <div class="service-body">
-              <h3>Equipment &amp; hotshot hauling</h3>
-              <p>
-                Small plant, equipment, and urgent loads that need to move fast. Ask dispatch what
-                trailer and load capacity is available for your job.
-              </p>
-            </div>
+          <div class="service-card">
+            <span class="service-num">06</span>
+            <h3>Equipment &amp; hotshot hauling</h3>
+            <p>
+              Small plant, equipment, and urgent loads that need to move fast. Ask dispatch
+              what trailer and load capacity is available for your job.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROOF / STATS -->
+    <!-- PROOF -->
     <section class="section proof" id="record" aria-labelledby="record-heading">
       <div class="wrap">
         <div class="section-head">
           <div>
             <span class="tag">02 / Call record</span>
-            <h2 id="record-heading">Ten years of being the number people call.</h2>
+            <h2 id="record-heading">The number people call when it matters.</h2>
           </div>
           <p>
-            Zitha's Towing Services has been operating in Phalaborwa since 2016. The work is
-            straightforward: answer the phone, dispatch a unit, and get the vehicle moved safely.
+            Zitha's Towing Services has been operating in Phalaborwa for years. The work is
+            straightforward: answer the phone, dispatch a unit, move the vehicle safely.
           </p>
         </div>
 
         <div class="stats-grid">
           <div class="stat">
-            <strong>10</strong>
-            <span>Years operating in Ba-Phalaborwa</span>
-          </div>
-          <div class="stat">
             <strong>24/7</strong>
-            <span>Dispatch line, every day of the year</span>
+            <span>Dispatch line, every day</span>
           </div>
           <div class="stat">
             <strong>NATA</strong>
-            <span>Listed towing operator (Phalaborwa)</span>
+            <span>Listed towing operator</span>
+          </div>
+          <div class="stat">
+            <strong>Phala</strong>
+            <span>Based in Phalaborwa, not outsourced</span>
           </div>
           <div class="stat">
             <strong>Ins.</strong>
-            <span>Insurance-approved recovery &amp; storage</span>
+            <span>Insurance-approved recovery</span>
           </div>
         </div>
 
         <div class="quote-block">
           <blockquote>
-            “My bakkie broke down on the R71 outside town after dark. They answered on the second
-            ring, asked the right questions, and had a truck with me inside the hour. Loaded, tied
-            down properly, and dropped at my mechanic.”
+            "Broke down on the R71 after dark. They answered, asked the right questions, and
+            had a truck with me inside the hour. Loaded properly and dropped at my mechanic."
           </blockquote>
           <cite>— Driver, Phalaborwa</cite>
         </div>
@@ -1065,26 +1057,26 @@
     </section>
 
     <!-- ABOUT / PROCESS -->
-    <section class="section about" id="approach" aria-labelledby="approach-heading">
+    <section class="section about" id="dispatch" aria-labelledby="dispatch-heading">
       <div class="wrap about-grid">
         <div class="about-text">
           <span class="tag">03 / Dispatch process</span>
-          <h2 id="approach-heading">Phone answered. Unit dispatched. Vehicle secured.</h2>
+          <h2 id="dispatch-heading">Phone answered. Unit sent. Vehicle secured.</h2>
           <p>
-            Zitha's Towing Services is a locally based operator, not a national call centre. When
-            you phone 072 081 9170, you speak to someone who knows Phalaborwa’s roads, the R71
-            traffic, and where the nearest safe offloading point is.
+            Zitha's Towing Services is a locally based operator. When you phone 072 081 9170,
+            you speak to someone who knows Phalaborwa's roads, the R71 traffic, and where the
+            nearest safe offloading point is.
           </p>
           <p>
-            We ask for the vehicle type, location, and what happened. Then we tell you what we are
-            sending and when it will arrive. If the job needs a flatbed, a heavy-duty unit, or
-            long-distance transport, dispatch will confirm the right equipment before the unit
+            We ask for the vehicle type, location, and what happened. Then we tell you what we
+            are sending and when it will arrive. If the job needs a flatbed, a heavy-duty unit,
+            or long-distance transport, dispatch confirms the right equipment before the unit
             leaves the yard.
           </p>
           <p>
-            For accident recoveries, we work with insurance-approved processes and provide secure
-            storage at our Bataleur Street premises. Vehicles are logged and released only with
-            authorised instruction.
+            For accident recoveries, we work with insurance-approved processes and provide
+            secure storage at our Bataleur Street premises. Vehicles are logged and released
+            only with authorised instruction.
           </p>
         </div>
 
@@ -1136,9 +1128,9 @@
           <span class="tag">04 / Contact dispatch</span>
           <h2 id="contact-heading">Stuck? Phone the line that answers.</h2>
           <p style="max-width: 46ch; margin-top: var(--space-2);">
-            The dispatch line is open 24 hours. For the fastest response, phone or WhatsApp with
-            your location and vehicle details. If you are enquiring about long-distance transport
-            or storage, use the form and we will call back.
+            The dispatch line is open 24 hours. For the fastest response, phone or WhatsApp
+            with your location and vehicle details. For long-distance transport or storage
+            enquiries, use the form and we will call back.
           </p>
 
           <dl class="contact-details">
@@ -1185,11 +1177,10 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo">ZITHA'S TOWING<span>.</span></div>
+          <div class="logo">ZITHA'S<span>TOWING</span></div>
           <p>
             24-hour towing, recovery, roadside assistance, and secure vehicle storage in
-            Phalaborwa, Limpopo. Operating since 2016. Insurance-approved and listed as a NATA
-            towing operator in Phalaborwa.
+            Phalaborwa, Limpopo. NATA-listed operator. Based at 167 Bataleur Street.
           </p>
         </div>
 
@@ -1198,7 +1189,7 @@
           <ul>
             <li><a href="#recovery">Recovery services</a></li>
             <li><a href="#record">Call record</a></li>
-            <li><a href="#approach">Dispatch process</a></li>
+            <li><a href="#dispatch">Dispatch process</a></li>
             <li><a href="#contact">Contact dispatch</a></li>
           </ul>
         </div>
